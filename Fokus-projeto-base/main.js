@@ -1,26 +1,27 @@
 const html = document.querySelector('html') //seleciona a tag html
 
 //seleciona botões
-const focusBt = document.querySelector('.app__card-button--foco')
+const focoBt = document.querySelector('.app__card-button--foco')
 const curtoBt = document.querySelector('.app__card-button--curto')
 const longoBt = document.querySelector('.app__card-button--longo')
 const banner = document.querySelector('.app__image')
 
 
-focusBt.addEventListener('click', ()=> {
-    html.setAttribute('data-contexto', 'foco')
-    banner.setAttribute('src', '/Fokus-projeto-base/imagens/foco.png')
+focoBt.addEventListener('click', () => {
+    alterarContexto('foco')
 })
 
 curtoBt.addEventListener('click', ()=> {
-    html.setAttribute('data-contexto', 'descanso-curto')
-    banner.setAttribute('src', '/Fokus-projeto-base/imagens/descanso-curto.png')
+    alterarContexto('descanso-curto')
 
 })
 
 longoBt.addEventListener('click', ()=> {
-    html.setAttribute('data-contexto', 'descanso-longo')
-    banner.setAttribute('src', '/Fokus-projeto-base/imagens/descanso-longo.png')
-
+    alterarContexto('descanso-longo')
 })
+
+function alterarContexto(contexto){
+    html.setAttribute('data-contexto', contexto)
+    banner.setAttribute('src', `/Fokus-projeto-base/imagens/${contexto}.png`)  
+} 
 
